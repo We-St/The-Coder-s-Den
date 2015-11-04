@@ -1,0 +1,16 @@
+
+<div id="sidebar-content">
+    <div id="website-title">
+        The <br/>Coder's Den
+    </div>
+    <div id="main-nav">
+        <ul>
+            <li><a>About Me</a></li>
+            <li><a>My Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="hint">
+        @ 2015 - 2016. All rights reserved.
+    </div>
+</div>
