@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700,700italic,400italic);
 
 
 * {
@@ -15,15 +16,48 @@
 body {
     font-family: 'Roboto', 'Open Sans', sans-serif;
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 17px;
     text-rendering: optimizelegibility;
     color: #333;
+    margin: 0;
+    padding: 0;
+
 }
 
 
 /*
  * Markdown Equivalents
  */
+
+/* Links */
+
+a, a:focus, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Paragraph */
+
+p {
+    text-align: justify;
+}
+
+/* Headlines */
+
+h1 {
+    font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+}
+
+/* Code blocks */
+
+code {
+    font-size: 13px;
+}
+
 
 
 
@@ -38,6 +72,7 @@ body {
     width: 360px;
     bottom: 0;
     background: #202020;
+    font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
 }
 
 
@@ -56,16 +91,23 @@ body {
     padding: 20px;
 }
 
+#sidebar-content a, #sidebar-content a:focus, #sidebar-content a:visited {
+    color: white;
+}
+
 #website-title {
     font-family: 'Abril Fatface', cursive;
     font-size: 55px;
     line-height: 1.2em;
 }
 
+#main-nav {
+    margin-top: 40px;
+}
 
 #main-nav ul {
     list-style: none;
-    margin: 0 0 30px 0;
+    margin: 0 0 0 0;
     padding: 0;
 }
 
@@ -75,13 +117,40 @@ body {
     text-align: center;
 }
 
-
-
 #sidebar .hint {
     color: rgba(255,255,255, 0.6);
-    font-size: 0.8em;
+    font-size: 0.6em;
+    text-align: center;
 }
 
+#sidebar #contacts ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 50px;
+    padding-bottom: 55px;
+}
+
+#sidebar #contacts ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+#sidebar #contacts ul li a {
+    border-radius: 50%;
+    border: 1px solid #404040;
+    background: #404040;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+#sidebar #contacts ul li a:hover {
+    border: 1px solid #505050;
+}
 
 
 /*
@@ -90,9 +159,30 @@ body {
 
 #main-content {
     margin-left: 360px;
-    padding: 20px 50px;
+    padding: 20px 0;
+    padding-left: 17%;
+    padding-right: 17%;
 }
 
-code {
-    font-size: 16px;
+#main-content > h2 {
+    font-family: 'Lora', serif;
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/*
+ * Footer
+ */
+
+footer {
+    margin-left: 360px;
+    border-top: 1px solid #ccc;
+    padding: 25px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #555;
 }

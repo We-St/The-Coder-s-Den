@@ -5,12 +5,23 @@
     </div>
     <div id="main-nav">
         <ul>
-            <li><a>About Me</a></li>
-            <li><a>My Blog</a></li>
+            <li><a href="">About Me</a></li>
+            <li><a href="">My Blog</a></li>
         </ul>
+        <div style="clear: both"></div>
+    </div>
+    <div id="contacts">
+        <ul>
+            <li><a href="mailto:sw@the-coders-den.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+            <li><a href="https://github.com/We-St" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a><i class="fa fa-stack-overflow"></i></a></li>
+            <li><a><i class="fa fa-linkedin"></i></a></li>
+            <li><a><i class="fa fa-skype"></i></a></li>
+        </ul>
+        <div style="clear: both"></div>
     </div>
 
     <div class="hint">
-        @ 2015 - 2016. All rights reserved.
+        &copy; 2014 - 2015. All rights reserved.
     </div>
 </div>
