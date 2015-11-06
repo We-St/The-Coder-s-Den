@@ -1,8 +1,12 @@
-{{> header}}
-<h2>{{title}}</h2>
+{{> header }}
+
+<h1>{{ title }}</h1>
+<div>
+    {{ date }}
+</div>
 
 <article>
-    {{{contents}}}
+    {{{ contents }}}
 </article>
 
-{{> footer}}
+{{> footer }}

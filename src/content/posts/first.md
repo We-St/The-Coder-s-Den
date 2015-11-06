@@ -22,7 +22,7 @@ Since we couldn't reproduce the problems in our test environment, we had to assi
 # The Source of all Evil
 I removed logging and exception handling from the code to not clutter it too much. However all relevant lines are 1:1 copied from our server implementation. 
 
-```
+```vbnet
 Dim client As TcpClient = ... ' Injected
 Dim clientStream As NetworkStream = client.GetStream
  
@@ -41,7 +41,7 @@ While bytesToRead > 0
 End While
 ```
 
-```
+```vbnet
 Private Function GetMessageSize(ByVal s As Stream) As Int32
  ' read the first 4 bytes from the stream and return their value as int
   Return ... 
@@ -59,12 +59,12 @@ This also explained why the problems only arose with the production IP address, 
 # Lessons Learned
 There is a multitude to learn from the above, some of the most important aspects are:
 
-`Prepare your server for the worst`. To bring down our server, one malevolent client could bring down our whole production system. To repeat this, ONE client could stop the system. You couldn't even call that a DDOS attack, since you wouldn't need any distributed attack. ONE client was enough. To mitigate this risk, a few changes to the code were sufficient, e.g.
+**Prepare your server for the worst:** to bring down our server, one malevolent client could bring down our whole production system. To repeat this, ONE client could stop the system. You couldn't even call that a DDOS attack, since you wouldn't need any distributed attack. ONE client was enough. To mitigate this risk, a few changes to the code were sufficient, e.g.
 
-`Allocate what the client really sends, not what it requests`. We made the mistake to allocate all the required memory at once before the client even transferred one byte of payload. Instead, it is a much better approach to always read while there is data on the stream and concatenate the chunks to a finished message. This is also what the example on MSDN does. Since the watchdogs would only send a few bytes, that alone would have prevented anything bad from happening.
+**Allocate what the client really sends, not what it requests:** we made the mistake to allocate all the required memory at once before the client even transferred one byte of payload. Instead, it is a much better approach to always read while there is data on the stream and concatenate the chunks to a finished message. This is also what the example on MSDN does. Since the watchdogs would only send a few bytes, that alone would have prevented anything bad from happening.
 
-`Add sanity checks`. If you implemented the first improvement, a malevolent client can still deny service to the production system by flooding it with random bytes. To prevent this, some checks can be added, e.g. deny any request that already allcoated more than X gb, add read timeouts to not wait too long for clients, etc.
+**Add sanity checks:** if you implemented the first improvement, a malevolent client can still deny service to the production system by flooding it with random bytes. To prevent this, some checks can be added, e.g. deny any request that already allcoated more than X gb, add read timeouts to not wait too long for clients, etc.
 
-`Create meaningful watchdogs`. To ensure our servers were available, we were satisfied by checking if they accepted TCP connections. However, this didn't mean that our system was also able to handle business requests. What if the server was up but the database was down? We changed our watchdogs to send a meaningful message, which would go all the way to the database and query a simple SELECT getDate() just to make sure our whole software stack was tested by the watchdog each time.
+**Create meaningful watchdogs:** to ensure our servers were available, we were satisfied by checking if they accepted TCP connections. However, this didn't mean that our system was also able to handle business requests. What if the server was up but the database was down? We changed our watchdogs to send a meaningful message, which would go all the way to the database and query a simple SELECT getDate() just to make sure our whole software stack was tested by the watchdog each time.
 
-If you made it so far, thumbs up and thanks for reading this. Although I hope to write another blog post soon, I hope this will be one of the last of my personal WTF moments for some time. Stay tuned!
+If you made it so far, thumbs up and thanks for reading this. Although I hope to write another blog post soon, I hope this will be one of the last of my personal WTF moments for some time. **`Stay tuned!`**

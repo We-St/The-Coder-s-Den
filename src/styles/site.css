@@ -52,12 +52,24 @@ h1 {
     font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
 }
 
+h5 {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
 /* Code blocks */
 
-code {
+pre > code {
     font-size: 13px;
 }
 
+p > code, strong > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, table code { /* Inline code */
+    background-color: #f0f0f0;
+    padding: 5px;
+    font-size: 14px;
+}
 
 
 
@@ -164,7 +176,7 @@ code {
     padding-right: 17%;
 }
 
-#main-content > h2 {
+#main-content > h1 {
     font-family: 'Lora', serif;
     font-size: 42px;
     font-weight: 400;
