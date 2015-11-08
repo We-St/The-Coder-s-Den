@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Control Flow Statement Distribution</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Access Modifiers and Control Flow'
+        },
+        labels: {
+            items: [{
+                html: '<b>Access Modifiers</b>',
+                style: {
+                    left: '140px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            },{
+                html: '<b>Control Flow</b>',
+                style: {
+                    left: '440px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Occurrences',
+            data: [{
+                name: 'public',
+                y: 178443,
+                color: Highcharts.getOptions().colors[0]
+            }, {
+                name: 'protected',
+                y: 10594,
+                color: Highcharts.getOptions().colors[2]
+            }, {
+                name: 'private',
+                y: 40297,
+                color: Highcharts.getOptions().colors[3]
+            }, {
+                name: 'internal',
+                y: 44275,
+                color: Highcharts.getOptions().colors[4]
+            }],            
+            center: [200, 150],
+            size: 150
+        }, {
+            type: 'pie',
+            name: 'Occurrences',
+            data: [{
+                name: 'if',
+                y: 78682,
+                color: Highcharts.getOptions().colors[0]
+            }, {
+                name: 'while',
+                y: 2418,
+                color: Highcharts.getOptions().colors[2]
+            }, {
+                name: 'for',
+                y: 33400,
+                color: Highcharts.getOptions().colors[3]
+            }, {
+                name: 'foreach',
+                y: 9183,
+                color: Highcharts.getOptions().colors[4]
+            }, {
+                name: 'switch',
+                y: 5809,
+                color: Highcharts.getOptions().colors[5]
+            }],            
+            center: [500, 150],
+            size: 150
+        }]
+    });
+});
+    </script>
+</head>
+<body>
+    <div id="container" style="min-width: 310px; height: 100%; margin: 0 auto"></div>
+</body>
+
+<script>
+
+    Highcharts.theme = {
+        colors: ['#428BCA', '#FF9C2B', '#BD2A33', '#93A31C', '#BD2A33', '#D6AA26', '#3C4563', '#408156', '#7CB5EC',
+                 '#434348', '#6AF9C4'],
+        credits: {
+            enabled: false
+        }
+    };
+
+    // Apply the theme
+    Highcharts.setOptions(Highcharts.theme);
+
+</script>
+</html>

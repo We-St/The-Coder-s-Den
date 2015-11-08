@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Top 10 CSharp Keywords</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Top 10 C# Keywords'
+        },
+        subtitle: {
+            text: 'Projects: Entity Framework, Nuget Paket Manager, Orchard, Roslyn, Virtual Router'
+        },
+        legend: {
+            enabled: false  
+        },
+        xAxis: {
+            categories: ['public'
+,'new'
+,'var'
+,'return'
+,'this'
+,'null'
+,'string'
+,'if'
+,'void'
+,'using']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Occurrences'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Keywords',
+            data: [178443
+,133585
+,130552
+,117188
+,107551
+,82765
+,81648
+,78682
+,75472
+,69700]
+}]
+    });
+});
+    </script>
+</head>
+<body>
+    <div id="container" style="min-width: 300px; height: 100%; margin: 0 auto"></div>
+</body>
+
+<script>
+
+    Highcharts.theme = {
+        colors: ['#428BCA', '#FF9C2B', '#BD2A33', '#93A31C', '#BD2A33', '#D6AA26', '#3C4563', '#408156', '#7CB5EC',
+                 '#434348', '#6AF9C4'],
+        credits: {
+            enabled: false
+        }
+    };
+
+    // Apply the theme
+    Highcharts.setOptions(Highcharts.theme);
+
+</script>
+</html>
