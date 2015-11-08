@@ -33,7 +33,6 @@ body {
 
 a, a:focus, a:visited {
     color: #333;
-    text-decoration: none;
 }
 
 a:hover {
@@ -61,14 +60,27 @@ h5 {
 
 /* Code blocks */
 
-pre > code {
+pre > code, code.hljs  {
     font-size: 13px;
+    background-color: #f7f7f7;
 }
 
 p > code, strong > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, table code { /* Inline code */
     background-color: #f0f0f0;
     padding: 5px;
     font-size: 14px;
+}
+
+
+/*
+ * Blog Formatting
+ */
+
+iframe, iframe.chart {
+    width: 100%;
+    height: 420px;
+    border: none;
+    overflow: hidden;
 }
 
 
@@ -86,6 +98,15 @@ p > code, strong > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, 
     background: #202020;
     font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
 }
+
+#sidebar a {
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
 
 
 /*
@@ -165,6 +186,7 @@ p > code, strong > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, 
 }
 
 
+
 /*
  * Main Content
  */
@@ -183,6 +205,80 @@ p > code, strong > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, 
     text-align: center;
 }
 
+
+
+/*
+ * About
+ */
+
+#about > h1 {
+    font-family: 'Lora', serif;
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+}
+
+span.period {
+    color: #bbb;
+    font-weight: normal;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-right: 10px;
+    width: 125px;
+    display: inline-block;
+}
+
+span.techs {
+    color: #bbb;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+
+/*
+ * Blog
+ */
+
+ul.posts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.posts li {
+    margin-bottom: 40px;
+}
+
+ul.posts li h3 {
+    margin-bottom: 0;
+    float: left;
+}
+
+ul.posts .posting-date {
+    text-align: left;
+    margin: 25px 0 0px 10px;
+    padding: 0;
+    float: right;
+}
+
+ul.posts article {
+    text-align: justify;
+}
+
+.posting-date {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    color: #777;
+    font-size: 16px;
+}
+
+.posting-date i {
+    margin-right: 5px;
+}
+
+
+
 /*
  * Footer
  */
@@ -198,3 +294,88 @@ footer {
     font-weight: bold;
     color: #555;
 }
+
+
+
+
+/*
+ * Accordion
+ */
+
+ul.accordion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.accordion li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 4px;
+    padding-top: 18px;
+    border-top: 1px dotted #dce7eb;
+}
+
+ul.accordion li h2 {
+    margin: 0;
+    font-size: 17px;
+}
+
+ul.accordion li i {
+    position: absolute;
+    transform: translate(-6px, 0);
+    margin-top: 10px;
+    right: 10px;
+}
+
+ul.accordion li i:before, ul.accordion li i:after {
+    content: "";
+    position: absolute;
+    background-color: #ff6873;
+    width: 3px;
+    height: 9px;
+}
+
+ul.accordion li i:before {
+    transform: translate(-2px, 0) rotate(45deg);
+}
+
+ul.accordion li i:after {
+    transform: translate(2px, 0) rotate(-45deg);
+}
+
+ul.accordion li input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 25px;
+    z-index: 1;
+    opacity: 0;
+}
+
+ul.accordion li input[type=checkbox]:checked ~ p {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0, 50%);
+}
+
+ul.accordion li input[type=checkbox]:checked ~ i:before {
+    transform: translate(2px, 0) rotate(45deg);
+}
+
+ul.accordion li input[type=checkbox]:checked ~ i:after {
+    transform: translate(-2px, 0) rotate(-45deg);
+}
+
+ul.accordion p {
+    position: relative;
+    overflow: hidden;
+    max-height: 800px;
+    opacity: 1;
+    transform: translate(0, 0);
+    margin-top: 14px;
+    z-index: 2;
+}
+

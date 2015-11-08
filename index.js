@@ -9,12 +9,16 @@ var Metalsmith = require('metalsmith'),
     fs         = require('fs'),
     collections = require('metalsmith-collections'),
     permalinks  = require('metalsmith-permalinks'),
-    metallic = require('metalsmith-metallic');
+    metallic = require('metalsmith-metallic'),
+    moment = require('moment');
+
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
 Handlebars.registerPartial('sidebar', fs.readFileSync(__dirname + '/templates/partials/sidebar.hbt').toString());
-
+Handlebars.registerHelper('formatDate', function(date) {
+    return moment(date).format('DD.MM.YYYY');
+});
 
 var plugin = function(files, metalsmith, done) {
     console.log(files);

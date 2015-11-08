@@ -1,0 +1,91 @@
+{{> header }}
+
+<div id="about">
+    <h1>About Me</h1>
+    <p>
+        I am a full-stack software developer, currently working for the <strong>United Nations Industrial Development Organisation (UNIDO)</strong>, where
+        I design and implement the <a href="https://open.unido.org" target="_blank">Open Data Platform</a>, UNIDO's contribution to a more transparent
+        aid and development process.
+    </p>
+    <p>
+        Beside my work, I am currently finishing my master in Software Engineering and Internet Computing at the Vienna University of Technology. I write my
+        master thesis about <strong>Model Operation Orchestration</strong>, for which I design a Groovy-based domain-specific language directly integrated into the Eclipse
+        IDE and compatible with the Eclipse Modeling Framework.
+    </p>
+
+    <h2>My Education</h2>
+    <ul class="accordion">
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">2002 - 2007</span>HTBLuVa in Wr. Neustadt</h2>
+            <p>
+                At the age of 14, I started the <a href="http://www.htlwrn.ac.at" target="_blank">HTBLuVa in Wr. Neustadt</a>. This school focuses on delivering principal
+                skills in software development and economics.
+                After five wonderful years, I passed my final-secondary exams with distinction.
+            </p>
+        </li>
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">2009 - 2013</span>Computer Engineering, Vienna University of Technology</h2>
+            <p>
+                After getting some practical experience at Pl.o.t and nolock, I decided to study <a href="http://www.tuwien.ac.at/" target="_blank">Computer Engineering in Vienna</a>. This
+                bachelor program focused on software development, mathematics and embedded systems.
+            </p>
+        </li>
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">2013 - now</span>Software Engineering &amp; Internet Computing, Vienna University of Technology</h2>
+            <p>
+                I am currently doing my master in Software Engineering &amp; Internet Computing at the Vienna University of Technology.
+                I thereby specify on security, distributed systems and project management.
+            </p>
+        </li>
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">Jan/14 - Jul/14</span>International Student at KU, Copenhagen, Denmark</h2>
+            <p>
+                In 2014, I spent a semester in Denmark to study Computer Science at the Københavns Universitet.
+            </p>
+        </li>
+    </ul>
+
+    <h2>My Experience</h2>
+    <ul class="accordion">
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">Oct/14 - now</span>Web Developer at UNDIO<span class="techs">MEAN (JavaScript)</span></h2>
+            <p>
+                I am currently working for the United Nations Industrial Development Organisation (UNIDO) at the Vienna International Center, where I am lead architect of and main contributor to
+                UNIDO's new <a href="https://open.unido.org/default.html" target="_blank">Open Data Platform</a>. I work on the full stack of the website, from database to frontend, and additionally create tools to
+                help increase the data consistency within UNIDO's various backend systems.
+            </p>
+        </li>
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">Oct/08 - Feb/15</span>Software developer at nolock<span class="techs">.NET (VB, C#, MSSQL)</span></h2>
+            <p>
+                After leaving Pl-o-t to persue my studies, I started as part-time .NET developer at <a href="http://www.nolock.at" target="_blank">nolock Softwarelösungen Gmbh</a>.
+                My focus here lay on developing small to medium sized projects for Austria's biggest ticketing company (<a href="http://www.oeticket.com" target="_blank">ÖTicket</a>),
+                where I worked on all parts of the product (everything between database and front-end).
+            </p>
+        </li>
+        <li>
+            <input type="checkbox" checked>
+            <i></i>
+            <h2><span class="period">Feb/08 - Sept/08</span>Back-end developer at Pl-o-t EDV<span class="techs">Java</span></h2>
+            <p>
+                My first full-time job led me to <a href="http://www.plot.at/" target="_blank">Pl-o-t EDV</a>, a well-known austrian
+                software company with a list of prominant clients. After 8 month I left to company with a lot more experience
+                and ready to start my studies.
+            </p>
+        </li>
+    </ul>
+</div>
+
+{{> footer }}

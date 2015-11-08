@@ -1,12 +1,16 @@
 {{> header}}
-<h2>{{title}}</h2>
+<h1>My Blog</h1>
 
 <article>
-    <ul>
+    <ul class="posts">
         {{#each collections.posts}}
             <li>
-                <h3>{{this.title}}</h3>
-                <article>{{this.contents}}</article>
+                <h3><a href="/{{ path }}">{{ title }}</a></h3>
+                <div class="posting-date">
+                    <i class="fa fa-calendar"></i>{{ formatDate date }}
+                </div>
+                <div style="clear: both"></div>
+                <article>{{ abstract }}</article>
             </li>
         {{/each}}
     </ul>

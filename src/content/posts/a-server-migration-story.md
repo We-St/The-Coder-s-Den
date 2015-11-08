@@ -1,7 +1,8 @@
 ---
 title: "A Server Migration Story"
-date: 2014-04-18
+date: 2015-01-08
 template: post.hbt
+abstract: A few weeks ago, one of the companies I was working for decided to migrate our test and production systems from Windows Server 2003 to 2012. Not only did we get an OS upgrade, we also got a new, much more powerful machine that could host our services for years to come. While migrating the test systems worked like a charm, we couldn't believe that the new, much more powerful machine couldn't handle the traffic on the production environment. A task our old, less poweful machine did easily.
 ---
 # A Short Introduction
 
