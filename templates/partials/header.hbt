@@ -17,6 +17,7 @@
 
         <!-- styles -->
         <link rel="stylesheet" href="/styles/site.css">
+        <link rel="stylesheet" href="/styles/responsive.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github-gist.min.css">
     </head>
     <body>

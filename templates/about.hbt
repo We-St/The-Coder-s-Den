@@ -3,7 +3,7 @@
 <div id="about">
     <h1>About Me</h1>
     <p>
-        I am a full-stack software developer, currently working for the <strong>United Nations Industrial Development Organisation (UNIDO)</strong>, where
+        <strong><code>Hi there!</code></strong> My name is <b>Stefan Weghofer</b>. I am a full-stack software developer currently working for the <strong>United Nations Industrial Development Organisation (UNIDO)</strong>, where
         I design and implement the <a href="https://open.unido.org" target="_blank">Open Data Platform</a>, UNIDO's contribution to a more transparent
         aid and development process.
     </p>
